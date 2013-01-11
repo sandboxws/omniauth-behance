@@ -15,6 +15,16 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = [
     "README.md"
   ]
+  s.files = [
+    "Gemfile",
+    "README.md",
+    "Rakefile",
+    "VERSION",
+    "lib/omniauth-behance.rb",
+    "lib/omniauth-behance/version.rb",
+    "lib/omniauth/strategies/behance.rb",
+    "omniauth-behance.gemspec"
+  ]
   s.homepage = "http://github.com/sandboxws/omniauth-behance"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
@@ -31,8 +41,10 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
+      s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
     else
       s.add_dependency(%q<omniauth-behance>, [">= 0"])
+      s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
@@ -41,6 +53,7 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<omniauth-behance>, [">= 0"])
+    s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
