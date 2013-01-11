@@ -6,12 +6,10 @@ module OmniAuth
   module Strategies
     class Behance < OmniAuth::Strategies::OAuth2
       option :client_options, {
-        site: 'https://www.behance.com',
+        site: 'https://www.behance.net',
         authorize_url: 'https://www.behance.net/v2/oauth/authenticate',
         token_url: 'https://www.behance.net/v2/oauth/token'
       }
-
-      #option :provider_ignores_state, true
 
       def request_phase
         super
@@ -21,11 +19,21 @@ module OmniAuth
         super
       end
 
-      uid { raw_info['username'].to_s }
+      uid { raw_info['id'].to_s }
 
       info do
-        raise @json.inspect
         {
+          first_name: raw_info['first_name'],
+          last_name: raw_info['last_name'],
+          username: raw_info['username'],
+          city: raw_info['city'],
+          country: raw_info['country'],
+          state: raw_info['state'],
+          occupation: raw_info['occupation'],
+          url: raw_info['url'],
+          display_name: raw_info['display_name'],
+          full_name: raw_info['display_name'],
+          image: raw_info['images']['138']
         }
       end
 
@@ -34,15 +42,7 @@ module OmniAuth
       end
 
       def raw_info
-        #if @raw_info.nil?
-        #  @raw_info = {}
-        #  params = {access_token: access_token.token}
-        #  response = RestClient.get('https://smarterer.com/api/users/me', { :params => params })
-        #  user = MultiJson.decode(response.to_s)
-        #  @raw_info.merge!(user)
-        #end
-
-        @raw_info
+        @raw_info ||= access_token.get("/v2/users/#{access_token.params['user']['id']}", params: {api_key: client.id}).parsed['user']
       end
     end
   end
