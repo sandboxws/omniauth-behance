@@ -35,29 +35,17 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<omniauth-behance>, [">= 0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
+      s.add_runtime_dependency(%q<omniauth>, [">= 0"])
+      s.add_runtime_dependency(%q<omniauth-oauth2>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
     else
-      s.add_dependency(%q<omniauth-behance>, [">= 0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
+      s.add_dependency(%q<omniauth>, [">= 0"])
+      s.add_dependency(%q<omniauth-oauth2>, [">= 0"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
     end
   else
-    s.add_dependency(%q<omniauth-behance>, [">= 0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-    s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-    s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-    s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-    s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
+    s.add_dependency(%q<omniauth>, [">= 0"])
+    s.add_dependency(%q<omniauth-oauth2>, [">= 0"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
   end
 end
